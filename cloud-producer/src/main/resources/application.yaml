@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    function:
+      definition: product;order
+    stream:
+      bindings:
+        product-in-0:
+          destination: product-producer
+          group: product-group
+        order-in-0:
+          destination: order-producer
+          group: order-group
