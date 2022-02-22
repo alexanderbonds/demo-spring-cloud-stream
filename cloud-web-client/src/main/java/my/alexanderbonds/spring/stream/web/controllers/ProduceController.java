@@ -18,6 +18,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class ProduceController {
     private final StreamBridge streamBridge;
 
+    @Value("${app.demo.products.enhanced-exchange}")
+    private String productEnhancedExchange;
+
     @Value("${app.demo.products.exchange}")
     private String productExchange;
 
@@ -28,6 +31,12 @@ public class ProduceController {
     public void requestNewProduct(@RequestParam(name = "name") String productName) {
         log.info("Got new request for Product {}", productName);
         streamBridge.send(productExchange, productName);
+    }
+
+    @GetMapping("/enhance")
+    public void requestNewEnhancedProduct(@RequestParam(name = "name") String productName) {
+        log.info("Got new request for enhanced Product {}", productName);
+        streamBridge.send(productEnhancedExchange, productName);
     }
 
     @PostMapping("/order")

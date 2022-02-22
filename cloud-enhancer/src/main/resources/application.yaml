@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    function:
+      definition: enhance
+    stream:
+      bindings:
+        enhance-in-0:
+          destination: product-enhancer
+          group: enhance-group
+        enhance-out-0:
+          destination: product-producer
