@@ -6,5 +6,6 @@ app:
   demo:
     products:
       exchange: product-producer
+      enhanced-exchange: product-enhancer
     orders:
       exchange: order-producer

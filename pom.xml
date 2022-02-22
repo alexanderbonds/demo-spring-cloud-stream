@@ -20,7 +20,8 @@
 		<module>cloud-common</module>
 		<module>cloud-web-client</module>
 		<module>cloud-producer</module>
-	</modules>
+        <module>cloud-enhancer</module>
+    </modules>
 
 	<properties>
 		<java.version>11</java.version>
